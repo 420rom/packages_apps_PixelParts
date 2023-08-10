@@ -26,12 +26,6 @@
     <string name="wattage_title">Watt</string>
     <string name="health_title">Hälsa</string>
     <string name="cycle_count_title">Antal cykler</string>
-    <string name="stop_charging_title">Stoppladdningsnivå</string>
-    <string name="stop_charging_summary">Förhindra enheten från att ladda över en viss procent</string>
-    <string name="start_charging_title">Startladdningsnivå</string>
-    <string name="start_charging_summary">Återuppta laddning vid procent</string>
-    <string name="stop_below_start_error">Stoppnivån måste vara över startnivån!</string>
-    <string name="start_above_stop_error">Startnivån måste vara under stoppnivå!</string>
     <!-- Camera -->
     <string name="torch_strength_title">Ficklampsstryka</string>
     <string name="torch_strength_summary">Justera ljusstyrkan för PixelParts ficklampans QS-bricka</string>

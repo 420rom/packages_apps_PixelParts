@@ -32,7 +32,6 @@ import com.android.settingslib.widget.TopIntroPreference;
 
 import org.evolution.pixelparts.about.AboutActivity;
 import org.evolution.pixelparts.misc.Constants;
-import org.evolution.pixelparts.preferences.CustomSeekBarPreference;
 import org.evolution.pixelparts.R;
 import org.evolution.pixelparts.services.HBMService;
 import org.evolution.pixelparts.utils.FileUtils;
@@ -44,10 +43,6 @@ public class PixelParts extends PreferenceFragment
 
     // Device intro preference
     private TopIntroPreference mIntroPreference;
-
-    // Stop/Start charging preferences
-    private CustomSeekBarPreference mStopChargingPreference;
-    private CustomSeekBarPreference mStartChargingPreference;
 
     // High brightness mode preferences/switches
     private Preference mAutoHBMPreference;
@@ -76,28 +71,6 @@ public class PixelParts extends PreferenceFragment
         String deviceName = deviceManufacturer + " " + deviceModel;
         mIntroPreference = findPreference(Constants.KEY_DEVICE_INTRO);
         mIntroPreference.setTitle(deviceName);
-
-        // Stop charging preference
-        mStopChargingPreference =  (CustomSeekBarPreference) findPreference(Constants.KEY_STOP_CHARGING);
-        if (FileUtils.isFileWritable(Constants.NODE_STOP_CHARGING)) {
-            mStopChargingPreference.setValue(sharedPrefs.getInt(Constants.KEY_STOP_CHARGING,
-                    Integer.parseInt(FileUtils.getFileValue(Constants.NODE_STOP_CHARGING, Constants.DEFAULT_STOP_CHARGING))));
-            mStopChargingPreference.setOnPreferenceChangeListener(this);
-        } else {
-            mStopChargingPreference.setSummary(getString(R.string.kernel_node_access_error));
-            mStopChargingPreference.setEnabled(false);
-        }
-
-        // Start charging preference
-        mStartChargingPreference =  (CustomSeekBarPreference) findPreference(Constants.KEY_START_CHARGING);
-        if (FileUtils.isFileWritable(Constants.NODE_START_CHARGING)) {
-            mStartChargingPreference.setValue(sharedPrefs.getInt(Constants.KEY_START_CHARGING,
-                    Integer.parseInt(FileUtils.getFileValue(Constants.NODE_START_CHARGING, Constants.DEFAULT_START_CHARGING))));
-            mStartChargingPreference.setOnPreferenceChangeListener(this);
-        } else {
-            mStartChargingPreference.setSummary(getString(R.string.kernel_node_access_error));
-            mStartChargingPreference.setEnabled(false);
-        }
 
         // High brightness mode preferences/switches
         mHBMSwitch = (SwitchPreference) findPreference(Constants.KEY_HBM);
@@ -150,40 +123,8 @@ public class PixelParts extends PreferenceFragment
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        // Stop charging preference
-        if (preference == mStopChargingPreference) {
-            SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
-            int value = Integer.parseInt(newValue.toString());
-            int stopLevel = Integer.parseInt(newValue.toString());
-            int startLevel = sharedPrefs.getInt(Constants.KEY_START_CHARGING, 0);
-            if (startLevel >= stopLevel) {
-                startLevel = stopLevel - 1;
-                sharedPrefs.edit().putInt(Constants.KEY_START_CHARGING, startLevel).commit();
-                FileUtils.writeValue(Constants.NODE_START_CHARGING, String.valueOf(startLevel));
-                mStartChargingPreference.refresh(startLevel);
-                Toast.makeText(getContext(), R.string.stop_below_start_error, Toast.LENGTH_SHORT).show();
-            }
-            sharedPrefs.edit().putInt(Constants.KEY_STOP_CHARGING, value).commit();
-            FileUtils.writeValue(Constants.NODE_STOP_CHARGING, String.valueOf(value));
-            return true;
-          // Start charging preference
-        } else if (preference == mStartChargingPreference) {
-            SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
-            int value = Integer.parseInt(newValue.toString());
-            int startLevel = Integer.parseInt(newValue.toString());
-            int stopLevel = sharedPrefs.getInt(Constants.KEY_STOP_CHARGING, 100);
-            if (stopLevel <= startLevel) {
-                stopLevel = startLevel + 1;
-                sharedPrefs.edit().putInt(Constants.KEY_STOP_CHARGING, stopLevel).commit();
-                FileUtils.writeValue(Constants.NODE_STOP_CHARGING, String.valueOf(stopLevel));
-                mStopChargingPreference.refresh(stopLevel);
-                Toast.makeText(getContext(), R.string.start_above_stop_error, Toast.LENGTH_SHORT).show();
-            }
-            sharedPrefs.edit().putInt(Constants.KEY_START_CHARGING, value).commit();
-            FileUtils.writeValue(Constants.NODE_START_CHARGING, String.valueOf(value));
-            return true;
           // High brightness mode switch
-        } else if (preference == mHBMSwitch) {
+        if (preference == mHBMSwitch) {
             boolean enabled = (Boolean) newValue;
             SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
             sharedPrefs.edit().putBoolean(Constants.KEY_HBM, enabled).commit();
@@ -205,26 +146,6 @@ public class PixelParts extends PreferenceFragment
         }
 
         return false;
-    }
-
-    // Stop charging preference
-    public static void restoreStopChargingSetting(Context context) {
-        if (FileUtils.isFileWritable(Constants.NODE_STOP_CHARGING)) {
-            SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-            int value = sharedPrefs.getInt(Constants.KEY_STOP_CHARGING,
-                    Integer.parseInt(FileUtils.getFileValue(Constants.NODE_STOP_CHARGING, Constants.DEFAULT_STOP_CHARGING)));
-            FileUtils.writeValue(Constants.NODE_STOP_CHARGING, String.valueOf(value));
-        }
-    }
-
-    // Start charging preference
-    public static void restoreStartChargingSetting(Context context) {
-        if (FileUtils.isFileWritable(Constants.NODE_START_CHARGING)) {
-            SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-            int value = sharedPrefs.getInt(Constants.KEY_START_CHARGING,
-                    Integer.parseInt(FileUtils.getFileValue(Constants.NODE_START_CHARGING, Constants.DEFAULT_START_CHARGING)));
-            FileUtils.writeValue(Constants.NODE_START_CHARGING, String.valueOf(value));
-        }
     }
 
     // High brightness mode switch

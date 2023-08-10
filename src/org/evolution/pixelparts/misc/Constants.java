@@ -35,14 +35,6 @@ public class Constants {
     public static final String NODE_HEALTH = "/sys/class/power_supply/battery/health";
     public static final String NODE_CYCLE_COUNT = "/sys/class/power_supply/battery/cycle_count";
 
-    // Stop/Start charging preferences
-    public static final String KEY_STOP_CHARGING = "stop_charging";
-    public static final String KEY_START_CHARGING = "start_charging";
-    public static final String NODE_STOP_CHARGING = "/sys/devices/platform/google,charger/charge_stop_level";
-    public static final String NODE_START_CHARGING = "/sys/devices/platform/google,charger/charge_start_level";
-    public static final String DEFAULT_STOP_CHARGING = "100";
-    public static final String DEFAULT_START_CHARGING = "0";
-
     // Flashlight
     public static final String KEY_TORCH_STRENGTH = "torch_strength";
     public static final String KEY_TORCH_STATE = "torch_state";

@@ -28,12 +28,6 @@
     <string name="wattage_title">Fogyasztás</string>
     <string name="health_title">Állapot</string>
     <string name="cycle_count_title">Ciklusszám</string>
-    <string name="stop_charging_title">Töltésmegállítási szint</string>
-    <string name="stop_charging_summary">Nem engedi a készüléket egy adott szintnél tovább tölteni</string>
-    <string name="start_charging_title">Töltésinditási szint</string>
-    <string name="start_charging_summary">Csak akkor tölt, ha a beállított szint alá merül</string>
-    <string name="stop_below_start_error">A megállási szintnek a kezdés szintje felett kell lennie!</string>
-    <string name="start_above_stop_error">A kezdési szintnek a leállítási szint alatt kell lennie!</string>
     <!-- Camera -->
     <string name="category_camera">Kamera</string>
     <string name="flashlight_tile_title">Lámpa</string>

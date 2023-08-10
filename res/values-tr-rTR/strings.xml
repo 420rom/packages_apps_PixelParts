@@ -28,12 +28,6 @@
     <string name="wattage_title">Vat miktarı</string>
     <string name="health_title">Sağlık</string>
     <string name="cycle_count_title">Döngü sayısı</string>
-    <string name="stop_charging_title">Şarj etmeyi durdurma seviyesi</string>
-    <string name="stop_charging_summary">Cihazın özel bir yüzdeden fazla şarj olmasını engelle</string>
-    <string name="start_charging_title">Şarj etmeyi başlatma seviyesi</string>
-    <string name="start_charging_summary">Özel bir yüzdeye gelince şarj etmeyi sürdür</string>
-    <string name="stop_below_start_error">Durdurma seviyesi başlatma seviyesinin üstünde olmalıdır!</string>
-    <string name="start_above_stop_error">Başlatma seviyesi durdurma seviyesinin altında olmalıdır!</string>
     <!-- Camera -->
     <string name="category_camera">Kamera</string>
     <string name="flashlight_tile_title">El feneri</string>

@@ -28,12 +28,6 @@
     <string name="wattage_title">Ваттность</string>
     <string name="health_title">Здоровье</string>
     <string name="cycle_count_title">Количество циклов</string>
-    <string name="stop_charging_title">Уровень прекращения зарядки</string>
-    <string name="stop_charging_summary">Запрет на зарядку устройства свыше определенного процента</string>
-    <string name="start_charging_title">Уровень начала зарядки</string>
-    <string name="start_charging_summary">Возобновление зарядки при определенном проценте</string>
-    <string name="stop_below_start_error">Уровень остановки должен быть выше уровня старта!</string>
-    <string name="start_above_stop_error">Уровень старта должен быть ниже уровня остановки!</string>
     <!-- Camera -->
     <string name="category_camera">Камера</string>
     <string name="flashlight_tile_title">Фонарик</string>

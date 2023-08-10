@@ -111,12 +111,6 @@
     <string name="cycle_count_title">Nombre de cycles</string>
     <string name="cycle_count_info_title">Informations sur le nombre de cycles</string>
     <string name="cycle_count_info_message">Le nombre de cycles indique le nombre de cycles de charge qu\'une batterie rechargeable a subi. Il indique l\'utilisation et le vieillissement de la batterie. La surveillance du nombre de cycles aide à estimer la durée de vie de la batterie et aide à déterminer si un remplacement est nécessaire.</string>
-    <string name="stop_charging_title">Niveau de charge d\'arrêt</string>
-    <string name="stop_charging_summary">Empêcher l\'appareil de se recharger au-delà d\'un certain pourcentage</string>
-    <string name="start_charging_title">Niveau de charge de départ</string>
-    <string name="start_charging_summary">Reprise de la charge à un pourcentage spécifique</string>
-    <string name="stop_below_start_error">Le niveau d\'arrêt doit être supérieur au niveau de départ !</string>
-    <string name="start_above_stop_error">Le niveau de départ doit être inférieur au niveau d\'arrêt !</string>
     <!-- Camera -->
     <string name="category_camera">Appareil photo</string>
     <string name="pixeltorch_tile_title">Torche Pixel</string>

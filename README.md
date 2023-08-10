@@ -2,14 +2,13 @@
 
 ## About the app
 
-PixelParts began as a simple High Brightness Mode (HBM) tool. Since then, it has evolved to include a detailed battery information panel, a display saturation level adjuster, charging limiter and more. The app now offers a wide range of features, transitioning from its original function as an HBM tool to a hub for device tweaks and stats on customs, with a lot more planned going forward.
+PixelParts began as a simple High Brightness Mode (HBM) tool. Since then, it has evolved to include a detailed battery information panel, a display saturation level adjuster and more. The app now offers a wide range of features, transitioning from its original function as an HBM tool to a hub for device tweaks and stats on customs, with a lot more planned going forward.
 
 ## Current features
 
 | Category | Feature | Description | QS Tile | Required kernel changes |
 | --- | --- | --- | --- | --- |
 | **Battery** | `Battery info` | View various battery information | N/A |N/A |
-| | `Start/Stop charging` | Start/stop charging at specific percentages | N/A | N/A |
 | **Display** | `High brightness mode (HBM)` | Enable peak luminance. | Yes | N/A |
 |  | `Automatic HBM` | Enable peak luminance based on sunlight | Yes | N/A |
 |  | `Saturation` | Control the saturation level of the display | N/A | N/A |
