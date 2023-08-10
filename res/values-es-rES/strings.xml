@@ -28,12 +28,6 @@
     <string name="wattage_title">Vatiaje</string>
     <string name="health_title">Salud de la batería</string>
     <string name="cycle_count_title">Ciclos de carga</string>
-    <string name="stop_charging_title">Detener la carga al</string>
-    <string name="stop_charging_summary">Evitar que el dispositivo cargue sobre un porcentaje específico</string>
-    <string name="start_charging_title">Comenzar la carga en porcentaje específico</string>
-    <string name="start_charging_summary">Reanudar la carga en un porcentaje específico</string>
-    <string name="stop_below_start_error">¡Ajuste final debe estar por encima del ajuste de inicio!</string>
-    <string name="start_above_stop_error">¡Ajuste de inicio debe estar por debajo del ajuste final!</string>
     <!-- Camera -->
     <string name="category_camera">Cámara</string>
     <string name="flashlight_tile_title">Linterna</string>

@@ -23,26 +23,6 @@
                     android:targetPackage="org.evolution.pixelparts"
                     android:targetClass="org.evolution.pixelparts.batteryinfo.BatteryInfoActivity" />
         </Preference>
-
-        <org.evolution.pixelparts.preferences.CustomSeekBarPreference
-            android:key="stop_charging"
-            android:title="@string/stop_charging_title"
-            android:summary="@string/stop_charging_summary"
-            android:persistent="true"
-            android:max="100"
-            android:min="1"
-            settings:units=""
-            android:defaultValue="100" />
-
-        <org.evolution.pixelparts.preferences.CustomSeekBarPreference
-            android:key="start_charging"
-            android:title="@string/start_charging_title"
-            android:summary="@string/start_charging_summary"
-            android:persistent="true"
-            android:max="99"
-            android:min="0"
-            settings:units=""
-            android:defaultValue="0" />
     </PreferenceCategory>
 
     <!-- Start of display category -->

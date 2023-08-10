@@ -28,12 +28,6 @@
     <string name="wattage_title">Potência</string>
     <string name="health_title">Saúde</string>
     <string name="cycle_count_title">Ciclos de carga</string>
-    <string name="stop_charging_title">Nível para interromper o carregamento</string>
-    <string name="stop_charging_summary">Impedir que o dispositivo carregue acima da porcentagem definida</string>
-    <string name="start_charging_title">Nível para retomar o carregamento</string>
-    <string name="start_charging_summary">Retomar a carga na porcentagem definida</string>
-    <string name="stop_below_start_error">O nível para interromper o carregamento deve ser maior que o nível para retomar!</string>
-    <string name="start_above_stop_error">O nível para retomar o carregamento deve ser menor que o nível para interromper!</string>
     <!-- Camera -->
     <string name="category_camera">Câmera</string>
     <string name="flashlight_tile_title">Lanterna</string>
